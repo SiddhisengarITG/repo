@@ -1,1 +1,162 @@
- 
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .list {
+            list-style: none;
+            display: flex;
+            gap: 38px;
+        }
+
+
+        .logo-img {
+            width: 200px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 100px 24px 100px;
+            background-color: black;
+            color: white;
+        }
+
+        .bg1 {
+            position: relative;
+        }
+
+        .text {
+            text-align: center;
+            position: absolute;
+            top: 32%;
+            font-weight: bolder;
+            font-size: 47px;
+            width: 100%;
+            align-self: center;
+        }
+
+        .text2 {
+            text-align: center;
+            position: absolute;
+            top: 32%;
+            font-weight: bolder;
+            font-size: 47px;
+            width: 100%;
+            color: white;
+            align-self: center;
+        }
+
+        button.dark {
+            border-radius: 13px;
+            padding: 10px;
+            border: 2px solid red;
+        }
+
+        .headActivr {
+            background-color: white;
+            color: black;
+        }
+
+
+        #popup {
+            width: 400px;
+            height: 78px;
+            background-color: antiquewhite;
+            color: black;
+            text-align: center;
+            padding-top: 16px;
+            font-size: 20px;
+            position: absolute;
+            transform: translate(-50px, -50px);
+            top: 30%;
+            left: 60%;
+            border-radius: 26px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="header" id="header">
+            <div class="logo-img">
+                <img src="coding logo.jpg" height="100%" width="100%" alt="logo for header">
+            </div>
+            <div class="dark-button">
+                <button onclick="darkmode()" id="dark" class="dark">Dark Mode</button>
+            </div>
+            <div>
+                <nav>
+                    <ul class="list">
+                        <li>HOME </li>
+                        <li>ABOUT </li>
+                        <li>CONTACT US</li>
+                        <li>FEEDBACK</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="bg1">
+            <img class="image1" src="https://wallpaperaccess.com/full/2557705.jpg" height="100%" width="100%"
+                alt="banner">
+            <div class="text">
+                <h1 class="text">Creating Amazing Website Pure Html And CSS</h1>
+            </div>
+
+        </div>
+        <div id="popup">
+            <p>WELCOME TO MY WEBSITE 😊</p>
+        </div>
+
+        <!-- <div>
+            <img  class="img2" src="https://wallpaperaccess.com/full/2557705.jpg" height="100%" width="100%">
+        </div> -->
+
+    </div>
+    <script>
+        let btn = document.getElementById("dark");
+        let header = document.getElementById("header");
+        let text = document.querySelector(".text");
+        let img2 = document.querySelector(".image1");
+
+
+        function darkmode() {
+            header.classList.toggle("headActivr")
+            text.classList.toggle("text2")
+            if (btn.innerHTML == "Dark Mode") {
+                btn.innerHTML = "Light Mode"
+                img2.src = "https://i0.wp.com/picjumbo.com/wp-content/uploads/green-natural-background-with-trees-and-wooden-foundation-free-image.jpeg?w=600&quality=80";
+
+            }
+            else {
+                btn.innerHTML = "Dark Mode"
+                img2.src = "https://wallpaperaccess.com/full/2557705.jpg";
+            }
+
+            // img2.setAttribute("src", "https://wallpaperaccess.com/full/2557705.jpg")
+
+        }
+
+
+        let ele = document.getElementById("popup");
+
+        setTimeout(() => {
+            ele.style.display = "block";
+        }, 3000)
+
+        setTimeout(() => {
+            ele.style.display = "none";
+            clearTimeout(ele)
+        }, 9000)
+
+
+
+    </script>
+</body>
+
+</html>
